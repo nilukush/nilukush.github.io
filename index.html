@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bhashan2pathtak - Free AI-Powered Speech-to-Text Tool</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4A90E2;
+            --secondary-color: #50E3C2;
+            --accent-color: #F5A623;
+            --background-color: #FFFFFF;
+            --text-color: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        header {
+            background-color: var(--background-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #e69100;
+        }
+
+        .hero {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .features {
+            padding: 4rem 0;
+        }
+
+        .features h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background-color: #f4f4f4;
+            padding: 1.5rem;
+            border-radius: 5px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 1rem;
+        }
+
+        .faq {
+            padding: 4rem 0;
+            background-color: #f9f9f9;
+        }
+
+        .faq h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+
+        .faq-question {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .faq-answer {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            display: none;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .get-started {
+            padding: 4rem 0;
+            background-color: var(--secondary-color);
+            text-align: center;
+        }
+
+        .get-started h2 {
+            margin-bottom: 2rem;
+        }
+
+        footer {
+            background-color: var(--text-color);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                font-size: 1.5rem;
+                background: none;
+                border: none;
+                color: var(--primary-color);
+                cursor: pointer;
+            }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--background-color);
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active li {
+                margin: 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">bhashan2pathtak</div>
+            <button class="mobile-menu-btn">☰</button>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#get-started" class="btn btn-primary">Get Started</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Transform Speech to Text with AI</h1>
+            <p>Boost productivity with free, real-time transcription powered by advanced AI</p>
+            <a href="#get-started" class="btn btn-primary">Start Transcribing Now</a>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <img src="https://via.placeholder.com/50" alt="Real-time Transcription">
+                    <h3>Real-time Transcription</h3>
+                    <p>Convert speech to text instantly as you speak</p>
+                </div>
+                <div class="feature-card">
+                    <img src="https://via.placeholder.com/50" alt="High Accuracy">
+                    <h3>High Accuracy</h3>
+                    <p>Powered by Wit.ai for superior transcription quality</p>
+                </div>
+                <div class="feature-card">
+                    <img src="https://via.placeholder.com/50" alt="Easy Integration">
+                    <h3>Easy Integration</h3>
+                    <p>Seamlessly integrate with your favorite tools</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-question">How do I install bhashan2pathtak?</div>
+                <div class="faq-answer">You can install bhashan2pathtak using pip. Simply run 'pip install bhashan2pathtak' in your terminal.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is bhashan2pathtak really free?</div>
+                <div class="faq-answer">Yes, bhashan2pathtak is completely free to use. We believe in making speech-to-text technology accessible to everyone.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What languages does bhashan2pathtak support?</div>
+                <div class="faq-answer">Currently, bhashan2pathtak supports English. We are working on adding support for more languages in future updates.</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="get-started" class="get-started">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Follow these simple steps to start using bhashan2pathtak:</p>
+            <ol>
+                <li>Install bhashan2pathtak using pip: <code>pip install bhashan2pathtak</code></li>
+                <li>Set up your Wit.ai token (instructions in the README)</li>
+                <li>Run bhashan2pathtak: <code>bhashan2pathtak</code></li>
+            </ol>
+            <a href="https://github.com/nilukush/bhashan2pathtak" class="btn btn-primary" target="_blank">Visit GitHub Repository</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 bhashan2pathtak. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle FAQ answers
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
