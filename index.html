@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nilesh Kumar - Technology Leader & Software Engineer</title>
-    <meta name="description" content="Technology leader with 15+ years of experience in software engineering, fintech, and scaling operations. Expert in C++, Java, distributed systems, and enterprise architecture.">
+    <title>Nilesh Kumar - CEO & Technology Leader</title>
+    <meta name="description" content="CEO at Zenith. Technology leader with 15+ years building enterprise-scale platforms. Expert in AI/ML, system architecture, and leading global engineering teams across UAE, India, and Southeast Asia.">
     
     <style>
         :root {
@@ -18,6 +18,7 @@
             --max-width: 1100px;
             --success-color: #10b981;
             --warning-color: #f59e0b;
+            --ai-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
         
         * {
@@ -55,6 +56,12 @@
         
         .tagline {
             font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+        
+        .location {
+            font-size: 1rem;
             color: var(--text-secondary);
             margin-bottom: 30px;
         }
@@ -104,12 +111,25 @@
             line-height: 1.8;
         }
         
+        .skills-section {
+            margin-top: 40px;
+        }
+        
+        .skills-category {
+            margin-bottom: 25px;
+        }
+        
+        .skills-category h3 {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+        
         .skills {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             justify-content: center;
-            margin-top: 30px;
         }
         
         .skill-tag {
@@ -119,6 +139,58 @@
             border-radius: 25px;
             font-size: 0.95rem;
             border: 1px solid var(--border-color);
+        }
+        
+        .skill-tag.ai {
+            background: linear-gradient(135deg, #667eea22 0%, #764ba222 100%);
+            border-color: #667eea;
+        }
+        
+        /* Current Role Section */
+        .current-role {
+            padding: 80px 0;
+            background: var(--ai-gradient);
+            color: white;
+            text-align: center;
+        }
+        
+        .current-role h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .current-role .company {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .current-role .description {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+        
+        .current-role ul {
+            list-style: none;
+            max-width: 800px;
+            margin: 30px auto 0;
+            text-align: left;
+        }
+        
+        .current-role li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .current-role li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
         }
         
         /* Experience Section */
@@ -135,7 +207,7 @@
         }
         
         .experience-timeline {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
         
@@ -173,58 +245,45 @@
             font-weight: 500;
         }
         
+        .experience-period {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
         .experience-location {
             font-size: 0.9rem;
             color: var(--text-secondary);
         }
         
-        .experience-description {
-            color: var(--text-secondary);
-            line-height: 1.6;
+        .experience-description ul {
+            list-style: none;
             margin-top: 10px;
         }
         
-        /* Achievements Section */
-        .achievements {
-            padding: 60px 0;
-            background: var(--bg-primary);
-        }
-        
-        .achievements-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .achievement-card {
-            background: var(--bg-secondary);
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            border: 1px solid var(--border-color);
-        }
-        
-        .achievement-icon {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-        
-        .achievement-title {
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        
-        .achievement-desc {
-            font-size: 0.9rem;
+        .experience-description li {
             color: var(--text-secondary);
+            line-height: 1.6;
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .experience-description li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+        
+        .impact-metric {
+            font-weight: 600;
+            color: var(--success-color);
         }
         
         /* Projects Section */
         .projects {
             padding: 80px 0;
-            background: var(--bg-secondary);
+            background: var(--bg-primary);
         }
         
         .projects-grid {
@@ -235,7 +294,7 @@
         }
         
         .project-card {
-            background: var(--bg-primary);
+            background: var(--bg-secondary);
             border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 30px;
@@ -252,7 +311,7 @@
         
         .project-card.featured {
             grid-column: 1 / -1;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--ai-gradient);
             color: white;
             border: none;
         }
@@ -297,10 +356,6 @@
             color: white;
         }
         
-        .project-status.wip {
-            background: var(--warning-color);
-        }
-        
         .project-description {
             color: var(--text-secondary);
             margin-bottom: 20px;
@@ -316,7 +371,7 @@
         
         .tech-tag {
             padding: 4px 12px;
-            background: var(--bg-secondary);
+            background: var(--bg-primary);
             color: var(--text-secondary);
             border-radius: 6px;
             font-size: 0.875rem;
@@ -350,7 +405,7 @@
         /* Contact Section */
         .contact {
             padding: 80px 0;
-            background: var(--bg-primary);
+            background: var(--bg-secondary);
         }
         
         .contact h2 {
@@ -365,6 +420,32 @@
             color: var(--text-secondary);
             margin-bottom: 50px;
             font-size: 1.1rem;
+        }
+        
+        .contact-methods {
+            max-width: 600px;
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+        
+        .contact-info {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
         }
         
         .contact-form {
@@ -452,12 +533,16 @@
                 padding: 20px;
             }
             
-            .about p {
-                font-size: 1rem;
-            }
-            
             .experience-header {
                 flex-direction: column;
+            }
+            
+            .current-role h2 {
+                font-size: 2rem;
+            }
+            
+            .current-role .company {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -466,7 +551,8 @@
     <header>
         <div class="container">
             <h1>Nilesh Kumar</h1>
-            <p class="tagline">Technology Leader | 15+ Years in Software Engineering</p>
+            <p class="tagline">CEO at Zenith | AI Platform Leader | 15+ Years Building Enterprise-Scale Solutions</p>
+            <p class="location">📍 Dubai/Remote | Available for Leadership Opportunities</p>
             <div class="social-links">
                 <a href="https://github.com/nilukush" target="_blank">
                     <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
@@ -480,35 +566,71 @@
         </div>
     </header>
     
+    <!-- Current Role Section -->
+    <section class="current-role">
+        <div class="container">
+            <h2>CEO & Founder</h2>
+            <div class="company">Zenith</div>
+            <p class="description">December 2024 - Present | Dubai</p>
+            <p class="description">Building the future of AI-powered communication management</p>
+            <ul>
+                <li>Leading development of an AI-powered platform-native assistant that integrates with multiple messaging platforms</li>
+                <li>Building AI systems for automatic task extraction, cross-platform search, and conversation summarization</li>
+                <li>Designing natural language processing components for contextual understanding in messaging environments</li>
+                <li>Developing AI-powered cross-platform communication management solution for enterprise customers</li>
+            </ul>
+        </div>
+    </section>
+    
     <!-- About Section -->
     <section class="about">
         <div class="container">
             <div class="about-content">
-                <h2>About Me</h2>
+                <h2>Professional Summary</h2>
                 <p>
-                    Experienced technology leader with over 15 years of expertise in driving innovation and scaling operations 
-                    across fintech, e-commerce, and enterprise software domains. Currently leading technology initiatives at 
-                    ZenithAssistant, with a proven track record of building high-performance trading platforms, risk management 
-                    systems, and scalable architectures.
+                    Technology leader with 15+ years of experience building enterprise-scale platforms. Strong track 
+                    record of leading global engineering teams across UAE, India, Singapore, and Southeast Asia to 
+                    deliver scalable solutions with AI/ML components. Experience in developing recommendation systems 
+                    and demand forecasting using machine learning models, with expertise in system architecture and 
+                    platform integrations.
                 </p>
-                <p>
-                    My international experience spans across Saudi Arabia, UAE, Indonesia, and India, bringing a global 
-                    perspective to technology leadership. Passionate about building robust systems that solve complex business 
-                    problems while mentoring teams to achieve technical excellence.
-                </p>
-                <div class="skills">
-                    <span class="skill-tag">C++</span>
-                    <span class="skill-tag">Java</span>
-                    <span class="skill-tag">C#</span>
-                    <span class="skill-tag">Spring Boot</span>
-                    <span class="skill-tag">Linux</span>
-                    <span class="skill-tag">MySQL</span>
-                    <span class="skill-tag">MongoDB</span>
-                    <span class="skill-tag">Aerospike</span>
-                    <span class="skill-tag">Sybase</span>
-                    <span class="skill-tag">System Architecture</span>
-                    <span class="skill-tag">Trading Systems</span>
-                    <span class="skill-tag">Risk Management</span>
+                
+                <div class="skills-section">
+                    <div class="skills-category">
+                        <h3>Technical Expertise</h3>
+                        <div class="skills">
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Spring Boot</span>
+                            <span class="skill-tag">System Design</span>
+                            <span class="skill-tag">Cloud Architecture</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">RabbitMQ</span>
+                            <span class="skill-tag">Kafka</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-category">
+                        <h3>AI/ML</h3>
+                        <div class="skills">
+                            <span class="skill-tag ai">Machine Learning Models</span>
+                            <span class="skill-tag ai">Recommendation Systems</span>
+                            <span class="skill-tag ai">Demand Forecasting</span>
+                            <span class="skill-tag ai">Pattern Recognition</span>
+                            <span class="skill-tag ai">NLP</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-category">
+                        <h3>Leadership</h3>
+                        <div class="skills">
+                            <span class="skill-tag">Team Building</span>
+                            <span class="skill-tag">Global Team Management</span>
+                            <span class="skill-tag">Product Strategy</span>
+                            <span class="skill-tag">Technical Architecture</span>
+                            <span class="skill-tag">Agile Methodology</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -517,62 +639,109 @@
     <!-- Experience Section -->
     <section class="experience">
         <div class="container">
-            <h2 class="section-title">Professional Journey</h2>
+            <h2 class="section-title">Leadership Journey</h2>
             <div class="experience-timeline">
+                
                 <div class="experience-item">
                     <div class="experience-header">
                         <div>
-                            <h3 class="experience-title">Technology Leadership</h3>
-                            <div class="experience-company">ZenithAssistant</div>
+                            <h3 class="experience-title">VP Engineering & Product</h3>
+                            <div class="experience-company">Raena</div>
                         </div>
-                        <div class="experience-location">Current</div>
+                        <div>
+                            <div class="experience-period">December 2021 - August 2024</div>
+                            <div class="experience-location">Dubai</div>
+                        </div>
                     </div>
-                    <p class="experience-description">
-                        Leading technology initiatives and driving innovation in scalable system design and implementation.
-                    </p>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Built lead generation engine that scraped multiple websites and social media platforms to capture leads for resellers</li>
+                            <li>Developed recommendation system using machine learning models delivering <span class="impact-metric">incremental revenue of $8000/month</span></li>
+                            <li>Implemented demand forecasting systems using machine learning models to optimize inventory management</li>
+                            <li>Led development of a Gross Margin Engine that <span class="impact-metric">increased margins from 3% to 10%</span></li>
+                            <li>Created multi-city, multi-warehouse WMS with comprehensive inbound to outbound workflows</li>
+                        </ul>
+                    </div>
                 </div>
                 
                 <div class="experience-item">
                     <div class="experience-header">
                         <div>
-                            <h3 class="experience-title">International Technology Roles</h3>
-                            <div class="experience-company">Multiple Organizations</div>
+                            <h3 class="experience-title">VP Engineering</h3>
+                            <div class="experience-company">Umma</div>
                         </div>
-                        <div class="experience-location">2009 - Present</div>
+                        <div>
+                            <div class="experience-period">January 2021 - November 2021</div>
+                            <div class="experience-location">Jakarta</div>
+                        </div>
                     </div>
-                    <p class="experience-description">
-                        Built and scaled technology solutions across multiple geographies including Riyadh (Saudi Arabia), 
-                        Abu Dhabi (UAE), Jakarta (Indonesia), and major tech hubs in India (Gurugram, Chennai, Hyderabad).
-                    </p>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Built recommendation system for social community feed to enhance user engagement and content discovery</li>
+                            <li>Led a team of 12 engineers building a Muslim lifestyle community app with prayer, Quran, and content sharing features</li>
+                            <li>Architected and designed a complete podcast feature, enabling creation and upload <span class="impact-metric">within 20 days</span></li>
+                            <li>Managed platform integrations and system architecture for high scalability and user engagement</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Achievements Section -->
-    <section class="achievements">
-        <div class="container">
-            <h2 class="section-title">Recognition & Achievements</h2>
-            <div class="achievements-grid">
-                <div class="achievement-card">
-                    <div class="achievement-icon">🏆</div>
-                    <h3 class="achievement-title">Machate Raho Award</h3>
-                    <p class="achievement-desc">2017</p>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <h3 class="experience-title">VP Engineering & Product</h3>
+                            <div class="experience-company">Sayurbox</div>
+                        </div>
+                        <div>
+                            <div class="experience-period">April 2019 - December 2020</div>
+                            <div class="experience-location">Jakarta</div>
+                        </div>
+                    </div>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Developed ML-based demand forecasting systems improving inventory management</li>
+                            <li>Architected and implemented multi-city warehouse management system</li>
+                            <li>Built systems <span class="impact-metric">increasing revenue per order by 6000 IDR</span> and <span class="impact-metric">cover up per order by 4000 IDR</span></li>
+                            <li>Led 30+ engineers in building scalable e-commerce and logistics platforms</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="achievement-card">
-                    <div class="achievement-icon">💡</div>
-                    <h3 class="achievement-title">Snapdeal Hackathon</h3>
-                    <p class="achievement-desc">Finalist</p>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <h3 class="experience-title">Senior Engineering Manager</h3>
+                            <div class="experience-company">Snapdeal</div>
+                        </div>
+                        <div>
+                            <div class="experience-period">May 2015 - April 2019</div>
+                            <div class="experience-location">Gurgaon</div>
+                        </div>
+                    </div>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Managed development of mobile site, website, cart system, and order management systems</li>
+                            <li>Led checkout platform revamp, improving conversion <span class="impact-metric">from 1.6 to 2.7 for mobile, 3.3 to 4+ for app</span></li>
+                            <li>Managed 12+ engineers, balancing technical and management responsibilities</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="achievement-card">
-                    <div class="achievement-icon">🥇</div>
-                    <h3 class="achievement-title">Platinum Award</h3>
-                    <p class="achievement-desc">Bank of America Merrill Lynch</p>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-icon">🥉</div>
-                    <h3 class="achievement-title">Bronze Award</h3>
-                    <p class="achievement-desc">Bank of America Merrill Lynch</p>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <h3 class="experience-title">Previous Roles</h3>
+                            <div class="experience-company">PayPal & Bank of America</div>
+                        </div>
+                        <div>
+                            <div class="experience-period">2009 - 2015</div>
+                        </div>
+                    </div>
+                    <div class="experience-description">
+                        <ul>
+                            <li><strong>PayPal (2012-2015):</strong> Software Engineer - Risk VOC Post Transaction product team</li>
+                            <li><strong>Bank of America (2009-2012):</strong> Senior Software Engineer - Trading platform, FX and Market Data</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -581,29 +750,106 @@
     <main>
         <section class="projects">
             <div class="container">
-                <h2 class="section-title">Featured Projects</h2>
+                <h2 class="section-title">Key Projects & Innovations</h2>
                 
                 <div class="projects-grid">
-                    <!-- Featured Project: Article Saver -->
+                    <!-- Featured Project: Zenith AI Assistant -->
                     <article class="project-card featured">
                         <div class="project-header">
                             <div>
-                                <h3 class="project-title">📚 Article Saver</h3>
-                                <p class="project-status">Open Source</p>
+                                <h3 class="project-title">🤖 Zenith AI Assistant</h3>
+                                <p class="project-status">Current Focus</p>
                             </div>
                         </div>
                         <p class="project-description">
-                            A privacy-focused, open-source read-later application designed as a free alternative to Pocket. 
-                            Features include one-click import from Pocket, offline reading capabilities, intelligent tagging, 
-                            and cloud synchronization. Built with modern web technologies and Electron for cross-platform support.
+                            Building an AI-powered platform-native assistant that revolutionizes how enterprises manage 
+                            cross-platform communications. Features automatic task extraction, intelligent search across 
+                            messaging platforms, and conversation summarization using advanced NLP techniques.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">AI/ML</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Platform Integration</span>
+                            <span class="tech-tag">Enterprise Software</span>
+                        </div>
+                    </article>
+                    
+                    <!-- ML Projects -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">📊 ML Recommendation System</h3>
+                        </div>
+                        <p class="project-description">
+                            Developed recommendation system using machine learning models at Raena, delivering 
+                            <strong>$8000/month incremental revenue</strong>. Built for e-commerce platform to enhance 
+                            product discovery and user engagement.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Recommendation Engine</span>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">📈 Demand Forecasting System</h3>
+                        </div>
+                        <p class="project-description">
+                            Implemented ML-based demand forecasting systems at multiple companies (Raena, Sayurbox) to 
+                            optimize inventory management, reduce waste, and improve supply chain efficiency.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">ML Models</span>
+                            <span class="tech-tag">Time Series Analysis</span>
+                            <span class="tech-tag">Supply Chain</span>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">💰 Gross Margin Engine</h3>
+                        </div>
+                        <p class="project-description">
+                            Led development of a sophisticated Gross Margin Engine at Raena that <strong>increased margins 
+                            from 3% to 10%</strong> through intelligent pricing optimization and cost management algorithms.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">Business Logic</span>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">🛒 E-Commerce Platform Revamp</h3>
+                        </div>
+                        <p class="project-description">
+                            Led checkout platform revamp at Snapdeal, improving conversion rates significantly: 
+                            <strong>mobile from 1.6 to 2.7, app from 3.3 to 4+</strong>. Managed complete overhaul of 
+                            cart, checkout, and order management systems.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">System Architecture</span>
+                            <span class="tech-tag">Performance Optimization</span>
+                            <span class="tech-tag">A/B Testing</span>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">📚 Article Saver</h3>
+                        </div>
+                        <p class="project-description">
+                            Open-source read-later application built as a privacy-focused alternative to Pocket. 
+                            Features offline reading, intelligent tagging, and cross-platform synchronization.
                         </p>
                         <div class="tech-stack">
                             <span class="tech-tag">Electron</span>
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">TypeScript</span>
                             <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">Express</span>
                         </div>
                         <div class="project-links">
                             <a href="/article_saver/" target="_blank">
@@ -614,100 +860,229 @@
                                 <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                                 Source Code
                             </a>
-                            <a href="/article_saver/downloads.html" target="_blank">
-                                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                                Download
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- GitHub Showcase Section -->
+        <section class="projects" style="background: var(--bg-secondary); padding-top: 0;">
+            <div class="container">
+                <h2 class="section-title" style="margin-bottom: 20px;">Open Source Contributions</h2>
+                <p style="text-align: center; color: var(--text-secondary); margin-bottom: 50px; font-size: 1.1rem;">
+                    16 public repositories showcasing diverse technical expertise across multiple domains
+                </p>
+                
+                <div class="projects-grid">
+                    <!-- Security & Privacy Tools -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">🔐 Google Auth Decoder</h3>
+                        </div>
+                        <p class="project-description">
+                            Tool to decode Google Authenticator exports for secure 2FA backup and migration. 
+                            Helps users maintain control over their authentication tokens.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Security</span>
+                            <span class="tech-tag">2FA</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/nilukush/google_auth_decoder" target="_blank">
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                Source Code
                             </a>
                         </div>
                     </article>
                     
-                    <!-- Enterprise Projects -->
+                    <!-- AI/ML Tools -->
                     <article class="project-card">
                         <div class="project-header">
-                            <h3 class="project-title">💱 Mercury FX</h3>
+                            <h3 class="project-title">🎙️ Bhashan2Pathtak</h3>
                         </div>
                         <p class="project-description">
-                            High-performance foreign exchange trading platform designed for institutional clients. Built with 
-                            low-latency architecture supporting millions of transactions daily with sub-millisecond response times.
-                        </p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">C++</span>
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">Low Latency</span>
-                            <span class="tech-tag">FIX Protocol</span>
-                        </div>
-                    </article>
-                    
-                    <article class="project-card">
-                        <div class="project-header">
-                            <h3 class="project-title">📊 PantherIR</h3>
-                        </div>
-                        <p class="project-description">
-                            Sophisticated pricing engine for swap instruments and interest rate derivatives. Handles complex 
-                            financial calculations with high accuracy and performance for real-time trading decisions.
-                        </p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">C++</span>
-                            <span class="tech-tag">Quantitative Finance</span>
-                            <span class="tech-tag">Risk Analytics</span>
-                        </div>
-                    </article>
-                    
-                    <article class="project-card">
-                        <div class="project-header">
-                            <h3 class="project-title">🛒 E-Commerce Checkout</h3>
-                        </div>
-                        <p class="project-description">
-                            Led the complete redesign of a high-traffic e-commerce checkout system, improving conversion rates 
-                            by 35% through performance optimization and enhanced user experience.
-                        </p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">Spring Boot</span>
-                            <span class="tech-tag">Microservices</span>
-                            <span class="tech-tag">Redis</span>
-                        </div>
-                    </article>
-                    
-                    <article class="project-card">
-                        <div class="project-header">
-                            <h3 class="project-title">🛡️ Seller Risk Pilot</h3>
-                        </div>
-                        <p class="project-description">
-                            Implemented comprehensive fraud mitigation system using machine learning to identify and prevent 
-                            fraudulent seller activities, protecting millions in potential losses.
+                            Speech-to-text conversion application leveraging AI for accurate transcription. 
+                            Simple Python interface for converting speech into written text.
                         </p>
                         <div class="tech-stack">
                             <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Machine Learning</span>
-                            <span class="tech-tag">Risk Management</span>
+                            <span class="tech-tag">Speech Recognition</span>
+                            <span class="tech-tag">AI/ML</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/nilukush/bhashan2pathtak" target="_blank">
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                Source Code
+                            </a>
                         </div>
                     </article>
                     
+                    <!-- Mobile Development -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">📱 EchoBrief</h3>
+                        </div>
+                        <p class="project-description">
+                            Flutter-based mobile application with complete backend infrastructure. 
+                            Includes separate deployment configurations for scalable architecture.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Dart</span>
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Mobile Dev</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/nilukush/echobrief" target="_blank">
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                App Code
+                            </a>
+                            <a href="https://github.com/nilukush/echobrief_backend_deployment" target="_blank">
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                Backend
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Developer Tools -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">🔍 Clisy</h3>
+                        </div>
+                        <p class="project-description">
+                            Command-line search utility for quick browser searches from terminal. 
+                            Enhances developer productivity with instant search capabilities.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">CLI Tool</span>
+                            <span class="tech-tag">PyPI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/nilukush/clisy" target="_blank">
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                Source Code
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Productivity Tools -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">📄 Search from PDF</h3>
+                        </div>
+                        <p class="project-description">
+                            Utility to extract content from PDFs and perform Google searches. 
+                            Streamlines research workflow by automating PDF content analysis.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PDF Processing</span>
+                            <span class="tech-tag">Automation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/nilukush/search_from_pdf_in_google" target="_blank">
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                Source Code
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- System Architecture -->
                     <article class="project-card">
                         <div class="project-header">
                             <h3 class="project-title">🏗️ System Design - Uber</h3>
                         </div>
                         <p class="project-description">
-                            Comprehensive system design documentation for a ride-sharing platform covering microservices 
-                            architecture, real-time location tracking, and scalability considerations.
+                            Comprehensive system design documentation for a cab aggregator service. 
+                            Covers microservices architecture, real-time tracking, and scalability.
                         </p>
                         <div class="tech-stack">
                             <span class="tech-tag">System Design</span>
-                            <span class="tech-tag">Microservices</span>
-                            <span class="tech-tag">Distributed Systems</span>
+                            <span class="tech-tag">Architecture</span>
+                            <span class="tech-tag">Documentation</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/nilukush/System_Design_Uber" target="_blank">
+                            <a href="https://github.com/nilukush/system_design_uber" target="_blank">
                                 <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                View Documentation
+                                View Design
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Personal Tools -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">🛒 Libu</h3>
+                        </div>
+                        <p class="project-description">
+                            Personal, home-friendly buying list application built with C++. 
+                            Demonstrates low-level programming skills and practical utility development.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">Desktop App</span>
+                            <span class="tech-tag">Personal Tool</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/nilukush/libu" target="_blank">
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                Source Code
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Data Tools -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">🗺️ Get Cities Indonesia</h3>
+                        </div>
+                        <p class="project-description">
+                            Utility for retrieving and managing Indonesian city data. 
+                            Useful for location-based applications and geographic data processing.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Data Processing</span>
+                            <span class="tech-tag">Geographic Data</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/nilukush/get_cities_indonesia" target="_blank">
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                Source Code
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Infrastructure -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">☁️ Infrastructure as Code</h3>
+                        </div>
+                        <p class="project-description">
+                            Multiple infrastructure projects using HashiCorp Configuration Language (HCL). 
+                            Demonstrates DevOps expertise and cloud infrastructure management.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HCL</span>
+                            <span class="tech-tag">Terraform</span>
+                            <span class="tech-tag">DevOps</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/nilukush/brightlyst_infrastructure" target="_blank">
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                View Code
                             </a>
                         </div>
                     </article>
                 </div>
                 
-                <div class="archive-note" style="text-align: center; padding: 20px; background: var(--bg-primary); border-radius: 8px; color: var(--text-secondary); margin-top: 40px;">
-                    <p>View more projects and contributions on my <a href="https://github.com/nilukush?tab=repositories" target="_blank">GitHub profile</a></p>
+                <div style="text-align: center; margin-top: 50px;">
+                    <a href="https://github.com/nilukush?tab=repositories" target="_blank" 
+                       style="display: inline-block; padding: 14px 40px; background: var(--primary-color); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.2s;">
+                        View All 16 Repositories on GitHub →
+                    </a>
                 </div>
             </div>
         </section>
@@ -717,7 +1092,18 @@
     <section class="contact" id="contact">
         <div class="container">
             <h2>Let's Connect</h2>
-            <p class="contact-intro">I'm always interested in discussing technology leadership opportunities, innovative projects, or collaboration possibilities.</p>
+            <p class="contact-intro">
+                I'm always interested in discussing AI/ML innovations, technology leadership opportunities, 
+                or strategic partnerships. Based in Dubai and open to remote opportunities globally.
+            </p>
+            
+            <div class="contact-methods">
+                <div class="contact-info">
+                    <a href="tel:+919884820740">📱 +91-9884820740</a>
+                    <a href="tel:+971526482905">📱 +971-526482905</a>
+                    <a href="mailto:nilukush@gmail.com">✉️ nilukush@gmail.com</a>
+                </div>
+            </div>
             
             <form class="contact-form" action="https://formspree.io/f/xpwreoaq" method="POST" novalidate>
                 <!-- Honeypot field for spam protection -->
@@ -752,14 +1138,14 @@
             </form>
             
             <p style="text-align: center; margin-top: 30px; color: var(--text-secondary);">
-                <strong>Education:</strong> B.Tech Computer Science, VIT (2005-2009) | Merit Scholar
+                <strong>Education:</strong> B.Tech Computer Science, VIT (2009) | CGPA: 9.42/10
             </p>
         </div>
     </section>
     
     <footer>
         <div class="container">
-            <p>© 2025 Nilesh Kumar. Building robust systems that scale.</p>
+            <p>© 2025 Nilesh Kumar. Building AI-powered solutions that transform enterprises.</p>
         </div>
     </footer>
     
@@ -883,7 +1269,7 @@
                         errorAlert.style.cssText = 'background: #fee; color: #c00; padding: 12px; border-radius: 6px; margin-bottom: 20px;';
                         form.insertBefore(errorAlert, form.firstChild);
                     }
-                    errorAlert.textContent = 'Sorry, there was an error sending your message. Please try again or connect via LinkedIn.';
+                    errorAlert.textContent = 'Sorry, there was an error sending your message. Please try again or contact directly via email/phone.';
                 }
             });
         })();
