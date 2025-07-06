@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nilesh Kumar - Software Developer</title>
-    <meta name="description" content="Full-stack software developer specializing in web applications, desktop software, and developer tools. Creator of Article Saver and other open source projects.">
+    <title>Nilesh Kumar - Technology Leader & Software Engineer</title>
+    <meta name="description" content="Technology leader with 15+ years of experience in software engineering, fintech, and scaling operations. Expert in C++, Java, distributed systems, and enterprise architecture.">
     
     <style>
         :root {
@@ -121,89 +121,8 @@
             border: 1px solid var(--border-color);
         }
         
-        /* Hire Me Section */
-        .hire-me {
-            padding: 60px 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-        }
-        
-        .hire-me h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .hire-me p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.95;
-        }
-        
-        .hire-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 800px;
-            margin: 40px auto;
-        }
-        
-        .hire-feature {
-            text-align: left;
-        }
-        
-        .hire-feature h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .hire-feature p {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-        
-        .cta-button {
-            padding: 14px 35px;
-            background: white;
-            color: #667eea;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-        
-        .cta-button.secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-        
-        .cta-button.secondary:hover {
-            background: white;
-            color: #667eea;
-        }
-        
-        /* Projects Section */
-        .projects {
+        /* Experience Section */
+        .experience {
             padding: 80px 0;
             background: var(--bg-secondary);
         }
@@ -213,6 +132,99 @@
             text-align: center;
             margin-bottom: 50px;
             color: var(--text-primary);
+        }
+        
+        .experience-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .experience-item {
+            background: var(--bg-primary);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .experience-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .experience-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .experience-company {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .experience-location {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .experience-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+        
+        /* Achievements Section */
+        .achievements {
+            padding: 60px 0;
+            background: var(--bg-primary);
+        }
+        
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .achievement-card {
+            background: var(--bg-secondary);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+        
+        .achievement-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .achievement-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .achievement-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        /* Projects Section */
+        .projects {
+            padding: 80px 0;
+            background: var(--bg-secondary);
         }
         
         .projects-grid {
@@ -444,24 +456,9 @@
                 font-size: 1rem;
             }
             
-            .hire-me h2 {
-                font-size: 2rem;
-            }
-            
-            .cta-buttons {
+            .experience-header {
                 flex-direction: column;
-                align-items: center;
             }
-        }
-        
-        /* Archive Section */
-        .archive-note {
-            text-align: center;
-            padding: 20px;
-            background: var(--bg-primary);
-            border-radius: 8px;
-            color: var(--text-secondary);
-            margin-top: 40px;
         }
     </style>
 </head>
@@ -469,7 +466,7 @@
     <header>
         <div class="container">
             <h1>Nilesh Kumar</h1>
-            <p class="tagline">Building useful software that solves real problems</p>
+            <p class="tagline">Technology Leader | 15+ Years in Software Engineering</p>
             <div class="social-links">
                 <a href="https://github.com/nilukush" target="_blank">
                     <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
@@ -489,62 +486,94 @@
             <div class="about-content">
                 <h2>About Me</h2>
                 <p>
-                    I'm a full-stack software developer passionate about creating tools that make people's lives easier. 
-                    With experience in modern web development, desktop applications, and developer tools, I enjoy working on 
-                    projects that solve real-world problems.
+                    Experienced technology leader with over 15 years of expertise in driving innovation and scaling operations 
+                    across fintech, e-commerce, and enterprise software domains. Currently leading technology initiatives at 
+                    ZenithAssistant, with a proven track record of building high-performance trading platforms, risk management 
+                    systems, and scalable architectures.
                 </p>
                 <p>
-                    Currently focused on building privacy-focused applications and contributing to open source. 
-                    I believe in writing clean, maintainable code and creating user experiences that delight.
+                    My international experience spans across Saudi Arabia, UAE, Indonesia, and India, bringing a global 
+                    perspective to technology leadership. Passionate about building robust systems that solve complex business 
+                    problems while mentoring teams to achieve technical excellence.
                 </p>
                 <div class="skills">
-                    <span class="skill-tag">TypeScript</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">React</span>
-                    <span class="skill-tag">Node.js</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">PostgreSQL</span>
-                    <span class="skill-tag">Electron</span>
-                    <span class="skill-tag">Express</span>
-                    <span class="skill-tag">Docker</span>
-                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">C#</span>
+                    <span class="skill-tag">Spring Boot</span>
+                    <span class="skill-tag">Linux</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">Aerospike</span>
+                    <span class="skill-tag">Sybase</span>
+                    <span class="skill-tag">System Architecture</span>
+                    <span class="skill-tag">Trading Systems</span>
+                    <span class="skill-tag">Risk Management</span>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Hire Me Section -->
-    <section class="hire-me">
+    <!-- Experience Section -->
+    <section class="experience">
         <div class="container">
-            <h2>Available for Opportunities</h2>
-            <p>I'm open to exciting projects and collaborations</p>
-            
-            <div class="hire-features">
-                <div class="hire-feature">
-                    <h3>💼 Full-Stack Development</h3>
-                    <p>End-to-end application development from database to user interface</p>
+            <h2 class="section-title">Professional Journey</h2>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <h3 class="experience-title">Technology Leadership</h3>
+                            <div class="experience-company">ZenithAssistant</div>
+                        </div>
+                        <div class="experience-location">Current</div>
+                    </div>
+                    <p class="experience-description">
+                        Leading technology initiatives and driving innovation in scalable system design and implementation.
+                    </p>
                 </div>
-                <div class="hire-feature">
-                    <h3>🖥️ Desktop Applications</h3>
-                    <p>Cross-platform desktop apps with Electron and modern web technologies</p>
-                </div>
-                <div class="hire-feature">
-                    <h3>🔧 Developer Tools</h3>
-                    <p>CLI tools and utilities that improve developer productivity</p>
-                </div>
-                <div class="hire-feature">
-                    <h3>🏗️ System Architecture</h3>
-                    <p>Scalable system design with microservices and cloud technologies</p>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <h3 class="experience-title">International Technology Roles</h3>
+                            <div class="experience-company">Multiple Organizations</div>
+                        </div>
+                        <div class="experience-location">2009 - Present</div>
+                    </div>
+                    <p class="experience-description">
+                        Built and scaled technology solutions across multiple geographies including Riyadh (Saudi Arabia), 
+                        Abu Dhabi (UAE), Jakarta (Indonesia), and major tech hubs in India (Gurugram, Chennai, Hyderabad).
+                    </p>
                 </div>
             </div>
-            
-            <div class="cta-buttons">
-                <a href="#contact" class="cta-button">
-                    Get In Touch
-                </a>
-                <a href="https://www.linkedin.com/in/nileshkr/" target="_blank" class="cta-button secondary">
-                    View LinkedIn Profile
-                </a>
+        </div>
+    </section>
+    
+    <!-- Achievements Section -->
+    <section class="achievements">
+        <div class="container">
+            <h2 class="section-title">Recognition & Achievements</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">🏆</div>
+                    <h3 class="achievement-title">Machate Raho Award</h3>
+                    <p class="achievement-desc">2017</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">💡</div>
+                    <h3 class="achievement-title">Snapdeal Hackathon</h3>
+                    <p class="achievement-desc">Finalist</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">🥇</div>
+                    <h3 class="achievement-title">Platinum Award</h3>
+                    <p class="achievement-desc">Bank of America Merrill Lynch</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">🥉</div>
+                    <h3 class="achievement-title">Bronze Award</h3>
+                    <p class="achievement-desc">Bank of America Merrill Lynch</p>
+                </div>
             </div>
         </div>
     </section>
@@ -560,13 +589,13 @@
                         <div class="project-header">
                             <div>
                                 <h3 class="project-title">📚 Article Saver</h3>
-                                <p class="project-status">Actively Maintained</p>
+                                <p class="project-status">Open Source</p>
                             </div>
                         </div>
                         <p class="project-description">
-                            A free, open-source read-later app designed to replace Pocket. Features one-click import from Pocket, 
-                            offline reading, tagging, and cloud sync. Built with privacy in mind - your data stays yours. 
-                            Cross-platform desktop app with modern web interface.
+                            A privacy-focused, open-source read-later application designed as a free alternative to Pocket. 
+                            Features include one-click import from Pocket, offline reading capabilities, intelligent tagging, 
+                            and cloud synchronization. Built with modern web technologies and Electron for cross-platform support.
                         </p>
                         <div class="tech-stack">
                             <span class="tech-tag">Electron</span>
@@ -575,7 +604,6 @@
                             <span class="tech-tag">PostgreSQL</span>
                             <span class="tech-tag">Node.js</span>
                             <span class="tech-tag">Express</span>
-                            <span class="tech-tag">JWT Auth</span>
                         </div>
                         <div class="project-links">
                             <a href="/article_saver/" target="_blank">
@@ -593,21 +621,81 @@
                         </div>
                     </article>
                     
-                    <!-- System Design Project -->
+                    <!-- Enterprise Projects -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">💱 Mercury FX</h3>
+                        </div>
+                        <p class="project-description">
+                            High-performance foreign exchange trading platform designed for institutional clients. Built with 
+                            low-latency architecture supporting millions of transactions daily with sub-millisecond response times.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Low Latency</span>
+                            <span class="tech-tag">FIX Protocol</span>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">📊 PantherIR</h3>
+                        </div>
+                        <p class="project-description">
+                            Sophisticated pricing engine for swap instruments and interest rate derivatives. Handles complex 
+                            financial calculations with high accuracy and performance for real-time trading decisions.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">Quantitative Finance</span>
+                            <span class="tech-tag">Risk Analytics</span>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">🛒 E-Commerce Checkout</h3>
+                        </div>
+                        <p class="project-description">
+                            Led the complete redesign of a high-traffic e-commerce checkout system, improving conversion rates 
+                            by 35% through performance optimization and enhanced user experience.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">Microservices</span>
+                            <span class="tech-tag">Redis</span>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">🛡️ Seller Risk Pilot</h3>
+                        </div>
+                        <p class="project-description">
+                            Implemented comprehensive fraud mitigation system using machine learning to identify and prevent 
+                            fraudulent seller activities, protecting millions in potential losses.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Risk Management</span>
+                        </div>
+                    </article>
+                    
                     <article class="project-card">
                         <div class="project-header">
                             <h3 class="project-title">🏗️ System Design - Uber</h3>
                         </div>
                         <p class="project-description">
-                            Comprehensive system design documentation for a ride-sharing platform. Covers microservices architecture, 
-                            database design, caching strategies, and scalability considerations.
+                            Comprehensive system design documentation for a ride-sharing platform covering microservices 
+                            architecture, real-time location tracking, and scalability considerations.
                         </p>
                         <div class="tech-stack">
-                            <span class="tech-tag">Microservices</span>
-                            <span class="tech-tag">Redis</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">Kafka</span>
                             <span class="tech-tag">System Design</span>
+                            <span class="tech-tag">Microservices</span>
+                            <span class="tech-tag">Distributed Systems</span>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/nilukush/System_Design_Uber" target="_blank">
@@ -616,83 +704,10 @@
                             </a>
                         </div>
                     </article>
-                    
-                    <!-- Bhashan2Pathtak -->
-                    <article class="project-card">
-                        <div class="project-header">
-                            <h3 class="project-title">🎙️ Bhashan2Pathtak</h3>
-                        </div>
-                        <p class="project-description">
-                            Speech-to-text conversion tool with Wit.ai integration. Supports multiple languages and provides 
-                            flexible configuration options with cross-platform compatibility.
-                        </p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Wit.ai API</span>
-                            <span class="tech-tag">Audio Processing</span>
-                            <span class="tech-tag">CLI</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/nilukush/bhashan2pathtak" target="_blank">
-                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                Source Code
-                            </a>
-                        </div>
-                    </article>
-                    
-                    <!-- Clisy -->
-                    <article class="project-card">
-                        <div class="project-header">
-                            <h3 class="project-title">🔍 Clisy</h3>
-                        </div>
-                        <p class="project-description">
-                            Command-line search utility for quick browser searches from terminal. Supports multiple search engines 
-                            and is published on PyPI for easy installation via pip.
-                        </p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">PyPI</span>
-                            <span class="tech-tag">CLI Tool</span>
-                            <span class="tech-tag">PyScaffold</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/nilukush/clisy" target="_blank">
-                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                Source Code
-                            </a>
-                            <a href="https://pypi.org/project/clisy/" target="_blank">
-                                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
-                                PyPI Package
-                            </a>
-                        </div>
-                    </article>
-                    
-                    <!-- EchoBrief -->
-                    <article class="project-card">
-                        <div class="project-header">
-                            <h3 class="project-title">📱 EchoBrief</h3>
-                        </div>
-                        <p class="project-description">
-                            Mobile application built with Dart/Flutter framework. Open source project with MIT license 
-                            focusing on brief audio content delivery.
-                        </p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Dart</span>
-                            <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">Mobile</span>
-                            <span class="tech-tag">MIT License</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/nilukush/echobrief" target="_blank">
-                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                Source Code
-                            </a>
-                        </div>
-                    </article>
                 </div>
                 
-                <div class="archive-note">
-                    <p>Looking for more? Check out my <a href="https://github.com/nilukush?tab=repositories" target="_blank">GitHub repositories</a> for additional projects, experiments, and contributions.</p>
+                <div class="archive-note" style="text-align: center; padding: 20px; background: var(--bg-primary); border-radius: 8px; color: var(--text-secondary); margin-top: 40px;">
+                    <p>View more projects and contributions on my <a href="https://github.com/nilukush?tab=repositories" target="_blank">GitHub profile</a></p>
                 </div>
             </div>
         </section>
@@ -701,8 +716,8 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
-            <h2>Get In Touch</h2>
-            <p class="contact-intro">Have a project in mind? I'd love to hear from you. Send me a message and I'll respond as soon as possible.</p>
+            <h2>Let's Connect</h2>
+            <p class="contact-intro">I'm always interested in discussing technology leadership opportunities, innovative projects, or collaboration possibilities.</p>
             
             <form class="contact-form" action="https://formspree.io/f/xpwreoaq" method="POST" novalidate>
                 <!-- Honeypot field for spam protection -->
@@ -737,14 +752,14 @@
             </form>
             
             <p style="text-align: center; margin-top: 30px; color: var(--text-secondary);">
-                Resume available upon request
+                <strong>Education:</strong> B.Tech Computer Science, VIT (2005-2009) | Merit Scholar
             </p>
         </div>
     </section>
     
     <footer>
         <div class="container">
-            <p>© 2025 Nilesh Kumar. Built with HTML, CSS, and ☕</p>
+            <p>© 2025 Nilesh Kumar. Building robust systems that scale.</p>
         </div>
     </footer>
     
@@ -868,7 +883,7 @@
                         errorAlert.style.cssText = 'background: #fee; color: #c00; padding: 12px; border-radius: 6px; margin-bottom: 20px;';
                         form.insertBefore(errorAlert, form.firstChild);
                     }
-                    errorAlert.textContent = 'Sorry, there was an error sending your message. Please try again or email directly.';
+                    errorAlert.textContent = 'Sorry, there was an error sending your message. Please try again or connect via LinkedIn.';
                 }
             });
         })();
