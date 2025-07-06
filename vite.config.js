@@ -79,6 +79,22 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
+      workbox: {
+        navigateFallback: null, // Don't fallback for navigation
+        navigateFallbackDenylist: [
+          /^\/article_saver/,  // Exclude article_saver
+          /^\/[^\/]+\//,       // Exclude all subdirectories
+        ],
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/nilukush\.github\.io\/$/,
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'index-cache',
+            }
+          }
+        ]
+      },
       manifest: {
         name: 'Nilesh Kumar - Portfolio',
         short_name: 'NK Portfolio',
@@ -86,6 +102,8 @@ export default defineConfig({
         theme_color: '#1d4ed8',
         background_color: '#ffffff',
         display: 'minimal-ui',
+        scope: '/',
+        start_url: '/',
         icons: [
           {
             src: '/android-chrome-192x192.png',
