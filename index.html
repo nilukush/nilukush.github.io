@@ -1,54 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Article Saver - Free Open Source Read-Later App</title>
-    <meta name="description" content="Save articles for later with our free, open source read-later app. Import from Pocket with one click.">
-    
-    <!-- Instant redirect to Article Saver -->
-    <meta http-equiv="refresh" content="0; URL=https://nilukush.github.io/article_saver/">
-    <link rel="canonical" href="https://nilukush.github.io/article_saver/">
-    
-    <!-- Open Graph tags for social sharing -->
-    <meta property="og:title" content="Article Saver - Free Open Source Read-Later App">
-    <meta property="og:description" content="Save articles for later with our free, open source read-later app. Import from Pocket with one click.">
-    <meta property="og:url" content="https://nilukush.github.io/article_saver/">
-    <meta property="og:image" content="https://nilukush.github.io/article_saver/screenshots/og-image.png">
+    <title>Nilesh Kumar - Software Developer</title>
+    <meta name="description" content="Software developer specializing in web applications and desktop software. Creator of Article Saver and other open source projects.">
     
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background: #f5f5f5;
+        :root {
+            --primary-color: #2563eb;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --border-color: #e2e8f0;
+            --card-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            --max-width: 1100px;
         }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+        }
+        
         .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            padding: 60px 0;
+            text-align: center;
+            background: var(--bg-secondary);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+        
+        .tagline {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .social-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.2s;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Projects Section */
+        .projects {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--text-primary);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .project-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: var(--primary-color);
+        }
+        
+        .project-card.featured {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+        }
+        
+        .project-card.featured .project-title,
+        .project-card.featured .project-description,
+        .project-card.featured .tech-tag {
+            color: white;
+        }
+        
+        .project-card.featured .project-links a {
+            color: white;
+            border-color: white;
+        }
+        
+        .project-card.featured .project-links a:hover {
+            background: white;
+            color: #667eea;
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+        }
+        
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+        
+        .project-status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            background: #10b981;
+            color: white;
+        }
+        
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .tech-tag {
+            padding: 4px 12px;
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            border-radius: 6px;
+            font-size: 0.875rem;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .project-links a {
+            padding: 8px 16px;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .project-links a:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-card {
+                padding: 20px;
+            }
+        }
+        
+        /* Archive Section */
+        .archive-note {
             text-align: center;
             padding: 20px;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            margin-top: 40px;
         }
     </style>
-    
-    <!-- JavaScript redirect as backup -->
-    <script>
-        window.location.replace("https://nilukush.github.io/article_saver/");
-    </script>
 </head>
 <body>
-    <div class="container">
-        <h1>📚 Article Saver</h1>
-        <p>Redirecting to Article Saver...</p>
-        <p>If you're not redirected automatically, <a href="https://nilukush.github.io/article_saver/">click here</a>.</p>
-    </div>
+    <header>
+        <div class="container">
+            <h1>Nilesh Kumar</h1>
+            <p class="tagline">Building useful software that solves real problems</p>
+            <div class="social-links">
+                <a href="https://github.com/nilukush" target="_blank">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    GitHub
+                </a>
+                <a href="mailto:nilukush@gmail.com">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+                    Email
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <section class="projects">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                
+                <div class="projects-grid">
+                    <!-- Featured Project: Article Saver -->
+                    <article class="project-card featured">
+                        <div class="project-header">
+                            <div>
+                                <h3 class="project-title">📚 Article Saver</h3>
+                                <p class="project-status">Actively Maintained</p>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            A free, open-source read-later app designed to replace Pocket. Features one-click import from Pocket, 
+                            offline reading, tagging, and cloud sync. Built with privacy in mind - your data stays yours.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Electron</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Node.js</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="/article_saver/" target="_blank">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                View Project
+                            </a>
+                            <a href="https://github.com/nilukush/article_saver" target="_blank">
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                Source Code
+                            </a>
+                            <a href="/article_saver/downloads.html" target="_blank">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                Download
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Add more projects here as needed -->
+                    <!-- Example structure for additional projects:
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">Project Name</h3>
+                        </div>
+                        <p class="project-description">
+                            Brief description of the project and its purpose.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Technology</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank">View Project</a>
+                            <a href="#" target="_blank">Source Code</a>
+                        </div>
+                    </article>
+                    -->
+                </div>
+                
+                <div class="archive-note">
+                    <p>Looking for more? Check out my <a href="https://github.com/nilukush?tab=repositories" target="_blank">GitHub repositories</a> for additional projects and experiments.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 Nilesh Kumar. Built with HTML, CSS, and ☕</p>
+        </div>
+    </footer>
 </body>
 </html>
