@@ -27,570 +27,39 @@
     <meta name="twitter:description" content="CEO at Zenith. Technology leader with 15+ years building enterprise-scale platforms.">
     <meta name="twitter:image" content="https://nilukush.github.io/og-image.png">
     
-    <style>
-        :root {
-            --primary-color: #2563eb;
-            --text-primary: #1e293b;
-            --text-secondary: #64748b;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8fafc;
-            --border-color: #e2e8f0;
-            --card-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            --max-width: 1100px;
-            --success-color: #10b981;
-            --warning-color: #f59e0b;
-            --ai-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background: var(--bg-primary);
-        }
-        
-        .container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header */
-        header {
-            padding: 60px 0;
-            text-align: center;
-            background: var(--bg-secondary);
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: var(--text-primary);
-        }
-        
-        .tagline {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            margin-bottom: 15px;
-        }
-        
-        .location {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            margin-bottom: 30px;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .social-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            transition: color 0.2s;
-        }
-        
-        .social-links a:hover {
-            color: var(--primary-color);
-        }
-        
-        /* About Section */
-        .about {
-            padding: 60px 0;
-            background: var(--bg-primary);
-        }
-        
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .about h2 {
-            font-size: 2rem;
-            margin-bottom: 30px;
-            color: var(--text-primary);
-        }
-        
-        .about p {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-        
-        .skills-section {
-            margin-top: 40px;
-        }
-        
-        .skills-category {
-            margin-bottom: 25px;
-        }
-        
-        .skills-category h3 {
-            font-size: 1.1rem;
-            color: var(--text-primary);
-            margin-bottom: 10px;
-        }
-        
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-        
-        .skill-tag {
-            padding: 8px 20px;
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-            border-radius: 25px;
-            font-size: 0.95rem;
-            border: 1px solid var(--border-color);
-        }
-        
-        .skill-tag.ai {
-            background: linear-gradient(135deg, #667eea22 0%, #764ba222 100%);
-            border-color: #667eea;
-        }
-        
-        /* Current Role Section */
-        .current-role {
-            padding: 80px 0;
-            background: var(--ai-gradient);
-            color: white;
-            text-align: center;
-        }
-        
-        .current-role h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .current-role .company {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            font-weight: 300;
-        }
-        
-        .current-role .description {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.2rem;
-            line-height: 1.8;
-            opacity: 0.95;
-        }
-        
-        .current-role ul {
-            list-style: none;
-            max-width: 800px;
-            margin: 30px auto 0;
-            text-align: left;
-        }
-        
-        .current-role li {
-            padding: 10px 0;
-            padding-left: 30px;
-            position: relative;
-        }
-        
-        .current-role li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-        
-        /* Experience Section */
-        .experience {
-            padding: 80px 0;
-            background: var(--bg-secondary);
-        }
-        
-        .section-title {
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: 50px;
-            color: var(--text-primary);
-        }
-        
-        .experience-timeline {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .experience-item {
-            background: var(--bg-primary);
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 30px;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-        
-        .experience-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .experience-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-        
-        .experience-company {
-            color: var(--primary-color);
-            font-weight: 500;
-        }
-        
-        .experience-period {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-        
-        .experience-location {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-        
-        .experience-description ul {
-            list-style: none;
-            margin-top: 10px;
-        }
-        
-        .experience-description li {
-            color: var(--text-secondary);
-            line-height: 1.6;
-            padding: 5px 0;
-            padding-left: 20px;
-            position: relative;
-        }
-        
-        .experience-description li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-        }
-        
-        .impact-metric {
-            font-weight: 600;
-            color: var(--success-color);
-        }
-        
-        /* Projects Section */
-        .projects {
-            padding: 80px 0;
-            background: var(--bg-primary);
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-        
-        .project-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 30px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            border-color: var(--primary-color);
-        }
-        
-        .project-card.featured {
-            grid-column: 1 / -1;
-            background: var(--ai-gradient);
-            color: white;
-            border: none;
-        }
-        
-        .project-card.featured .project-title,
-        .project-card.featured .project-description,
-        .project-card.featured .tech-tag {
-            color: white;
-        }
-        
-        .project-card.featured .project-links a {
-            color: white;
-            border-color: white;
-        }
-        
-        .project-card.featured .project-links a:hover {
-            background: white;
-            color: #667eea;
-        }
-        
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 15px;
-        }
-        
-        .project-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 5px;
-        }
-        
-        .project-status {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            background: var(--success-color);
-            color: white;
-        }
-        
-        .project-description {
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-        
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 20px;
-        }
-        
-        .tech-tag {
-            padding: 4px 12px;
-            background: var(--bg-primary);
-            color: var(--text-secondary);
-            border-radius: 6px;
-            font-size: 0.875rem;
-        }
-        
-        .project-links {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-        
-        .project-links a {
-            padding: 8px 16px;
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 0.875rem;
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        .project-links a:hover {
-            background: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-        }
-        
-        /* Contact Section */
-        .contact {
-            padding: 80px 0;
-            background: var(--bg-secondary);
-        }
-        
-        .contact h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: var(--text-primary);
-            text-align: center;
-        }
-        
-        .contact-intro {
-            text-align: center;
-            color: var(--text-secondary);
-            margin-bottom: 50px;
-            font-size: 1.1rem;
-        }
-        
-        .contact-methods {
-            max-width: 600px;
-            margin: 0 auto 50px;
-            text-align: center;
-        }
-        
-        .contact-info {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-        }
-        
-        .contact-info a {
-            color: var(--primary-color);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .form-group {
-            margin-bottom: 25px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: var(--text-primary);
-            font-weight: 500;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 16px;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: border-color 0.2s;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-        
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-        
-        .form-submit {
-            text-align: center;
-        }
-        
-        .submit-button {
-            padding: 14px 40px;
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        
-        .submit-button:hover {
-            background: #1d4ed8;
-            transform: translateY(-2px);
-        }
-        
-        /* Footer */
-        footer {
-            padding: 40px 0;
-            text-align: center;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-secondary);
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .tagline {
-                font-size: 1.1rem;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .project-card {
-                padding: 20px;
-            }
-            
-            .experience-header {
-                flex-direction: column;
-            }
-            
-            .current-role h2 {
-                font-size: 2rem;
-            }
-            
-            .current-role .company {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/src/styles/main.css">
 </head>
 <body>
-    <header>
+    <!-- Skip Navigation Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- ARIA Live Region for Dynamic Updates -->
+    <div aria-live="polite" aria-atomic="true" class="aria-live-region" id="aria-live-region"></div>
+    <header role="banner">
         <div class="container">
             <h1>Nilesh Kumar</h1>
             <p class="tagline">Founder, CEO & CTPO at Zenith | AI Platform Leader | 15+ Years Building Enterprise-Scale Solutions</p>
-            <p class="location">📍 Dubai/Remote</p>
+            <p class="location"><span aria-hidden="true">📍</span> <span class="sr-only">Location:</span> Dubai/Remote</p>
             <div class="social-links">
-                <a href="https://github.com/nilukush" target="_blank">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                    GitHub
+                <a href="https://github.com/nilukush" target="_blank" aria-label="GitHub Profile">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><title>GitHub</title><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    <span class="sr-only">GitHub</span>
                 </a>
-                <a href="https://www.linkedin.com/in/nileshkr/" target="_blank">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                    LinkedIn
+                <a href="https://www.linkedin.com/in/nileshkr/" target="_blank" aria-label="LinkedIn Profile">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    <span class="sr-only">LinkedIn</span>
                 </a>
             </div>
         </div>
     </header>
     
-    <!-- Current Role Section -->
-    <section class="current-role">
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Current Role Section -->
+        <section class="current-role" aria-labelledby="current-role-heading">
         <div class="container">
-            <h2>Founder, CEO & CTPO</h2>
+            <h2 id="current-role-heading">Founder, CEO & CTPO</h2>
             <div class="company">Zenith</div>
             <p class="description">December 2024 - Present | Dubai</p>
             <p class="description">Building the future of AI-powered communication management</p>
@@ -603,11 +72,11 @@
         </div>
     </section>
     
-    <!-- About Section -->
-    <section class="about">
+        <!-- About Section -->
+        <section class="about" aria-labelledby="about-heading">
         <div class="container">
             <div class="about-content">
-                <h2>Professional Summary</h2>
+                <h2 id="about-heading">Professional Summary</h2>
                 <p>
                     Technology leader with 15+ years of experience building enterprise-scale platforms. Strong track 
                     record of leading global engineering teams across UAE, India, Singapore, and Southeast Asia to 
@@ -1141,9 +610,9 @@
     </main>
     
     <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <section class="contact" id="contact" aria-labelledby="contact-heading">
         <div class="container">
-            <h2>Let's Connect</h2>
+            <h2 id="contact-heading">Let's Connect</h2>
             <p class="contact-intro">
                 I'm always interested in discussing AI/ML innovations, strategic partnerships, or exploring 
                 how Zenith can transform your enterprise communication management. Based in Dubai and serving clients globally.
@@ -1151,33 +620,36 @@
             
             <div class="contact-methods">
                 <div class="contact-info">
-                    <a href="tel:+919884820740">📱 +91-9884820740</a>
-                    <a href="tel:+971526482905">📱 +971-526482905</a>
-                    <a href="mailto:nilukush@gmail.com">✉️ nilukush@gmail.com</a>
+                    <a href="tel:+919884820740" aria-label="Call India number +91-9884820740"><span aria-hidden="true">📱</span> +91-9884820740</a>
+                    <a href="tel:+971526482905" aria-label="Call UAE number +971-526482905"><span aria-hidden="true">📱</span> +971-526482905</a>
+                    <a href="mailto:nilukush@gmail.com" aria-label="Email nilukush@gmail.com"><span aria-hidden="true">✉️</span> nilukush@gmail.com</a>
                 </div>
             </div>
             
-            <form class="contact-form" action="https://formspree.io/f/xpwreoaq" method="POST" novalidate>
+            <form class="contact-form" action="https://formspree.io/f/xpwreoaq" method="POST" novalidate aria-label="Contact form">
+                <p class="form-instructions" id="form-instructions">
+                    <span class="required-indicator">*</span> indicates required fields
+                </p>
                 <!-- Honeypot field for spam protection -->
                 <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
                 
                 <div class="form-group">
-                    <label for="name">Name <span aria-label="required">*</span></label>
+                    <label for="name">Name <span class="required-indicator" aria-label="required">*</span></label>
                     <input type="text" id="name" name="name" required aria-required="true" maxlength="50">
                 </div>
                 
                 <div class="form-group">
-                    <label for="email">Email <span aria-label="required">*</span></label>
+                    <label for="email">Email <span class="required-indicator" aria-label="required">*</span></label>
                     <input type="email" id="email" name="email" required aria-required="true" maxlength="100">
                 </div>
                 
                 <div class="form-group">
-                    <label for="subject">Subject <span aria-label="required">*</span></label>
+                    <label for="subject">Subject <span class="required-indicator" aria-label="required">*</span></label>
                     <input type="text" id="subject" name="subject" required aria-required="true" maxlength="100">
                 </div>
                 
                 <div class="form-group">
-                    <label for="message">Message <span aria-label="required">*</span></label>
+                    <label for="message">Message <span class="required-indicator" aria-label="required">*</span></label>
                     <textarea id="message" name="message" required aria-required="true" maxlength="1000"></textarea>
                 </div>
                 
@@ -1195,136 +667,12 @@
         </div>
     </section>
     
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
             <p>© 2025 Nilesh Kumar. Building AI-powered solutions that transform enterprises.</p>
         </div>
     </footer>
     
-    <script>
-        // Enhanced form validation and submission
-        (function() {
-            const form = document.querySelector('.contact-form');
-            const submitButton = form.querySelector('.submit-button');
-            const formLoadTime = Date.now();
-            
-            // Real-time validation
-            const validateField = (field) => {
-                const value = field.value.trim();
-                let isValid = true;
-                let errorMessage = '';
-                
-                if (field.hasAttribute('required') && !value) {
-                    isValid = false;
-                    errorMessage = 'This field is required';
-                } else if (field.type === 'email' && value) {
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailRegex.test(value)) {
-                        isValid = false;
-                        errorMessage = 'Please enter a valid email address';
-                    }
-                } else if (field.maxLength > 0 && value.length > field.maxLength) {
-                    isValid = false;
-                    errorMessage = `Maximum ${field.maxLength} characters allowed`;
-                }
-                
-                // Update field styling
-                field.style.borderColor = isValid ? 'var(--border-color)' : '#ef4444';
-                
-                // Show/hide error message
-                let errorEl = field.parentElement.querySelector('.error-message');
-                if (!isValid && errorMessage) {
-                    if (!errorEl) {
-                        errorEl = document.createElement('span');
-                        errorEl.className = 'error-message';
-                        errorEl.style.cssText = 'color: #ef4444; font-size: 0.875rem; margin-top: 5px; display: block;';
-                        field.parentElement.appendChild(errorEl);
-                    }
-                    errorEl.textContent = errorMessage;
-                } else if (errorEl) {
-                    errorEl.remove();
-                }
-                
-                return isValid;
-            };
-            
-            // Add validation to all form fields
-            form.querySelectorAll('input[required], textarea[required]').forEach(field => {
-                field.addEventListener('blur', () => validateField(field));
-                field.addEventListener('input', () => {
-                    if (field.parentElement.querySelector('.error-message')) {
-                        validateField(field);
-                    }
-                });
-            });
-            
-            // Form submission handler
-            form.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                
-                // Bot protection: Check submission time
-                const submissionTime = Date.now();
-                const timeDiff = (submissionTime - formLoadTime) / 1000;
-                if (timeDiff < 3) {
-                    // Silently reject - likely a bot
-                    return false;
-                }
-                
-                // Validate all fields
-                const fields = form.querySelectorAll('input[required], textarea[required]');
-                let isFormValid = true;
-                fields.forEach(field => {
-                    if (!validateField(field)) {
-                        isFormValid = false;
-                    }
-                });
-                
-                if (!isFormValid) {
-                    return false;
-                }
-                
-                // Show loading state
-                submitButton.disabled = true;
-                submitButton.textContent = 'Sending...';
-                
-                try {
-                    const response = await fetch(form.action, {
-                        method: 'POST',
-                        body: new FormData(form),
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-                    
-                    if (response.ok) {
-                        // Success feedback
-                        form.innerHTML = `
-                            <div style="text-align: center; padding: 40px 20px;">
-                                <div style="font-size: 3rem; margin-bottom: 20px;">✅</div>
-                                <h3 style="color: var(--success-color); margin-bottom: 10px;">Message Sent Successfully!</h3>
-                                <p style="color: var(--text-secondary);">Thank you for reaching out. I'll get back to you within 24 hours.</p>
-                            </div>
-                        `;
-                    } else {
-                        throw new Error('Form submission failed');
-                    }
-                } catch (error) {
-                    // Error feedback
-                    submitButton.disabled = false;
-                    submitButton.textContent = 'Send Message';
-                    
-                    // Show error message
-                    let errorAlert = form.querySelector('.form-error');
-                    if (!errorAlert) {
-                        errorAlert = document.createElement('div');
-                        errorAlert.className = 'form-error';
-                        errorAlert.style.cssText = 'background: #fee; color: #c00; padding: 12px; border-radius: 6px; margin-bottom: 20px;';
-                        form.insertBefore(errorAlert, form.firstChild);
-                    }
-                    errorAlert.textContent = 'Sorry, there was an error sending your message. Please try again or contact directly via email/phone.';
-                }
-            });
-        })();
-    </script>
+    <script type="module" src="/src/scripts/main.js"></script>
 </body>
 </html>
