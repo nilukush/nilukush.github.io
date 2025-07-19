@@ -12,6 +12,7 @@ dist/
 # Editor directories and files
 .idea/
 .vscode/
+.claude/
 *.suo
 *.ntvs*
 *.njsproj
@@ -41,4 +42,24 @@ coverage/
 
 # Backup files
 *.backup
+*.bak
+*-backup.*
 index-backup.html
+
+# Temporary documentation
+*_GUIDE.md
+*_STEPS.md
+*_REPORT.md
+*_SUMMARY.md
+*_FIX.md
+*_SETUP.md
+*_PLAN.md
+
+# Utility scripts
+generate-*.js
+deploy-*.sh
+create-*.js
+
+# Temporary files
+*.tmp
+*.temp

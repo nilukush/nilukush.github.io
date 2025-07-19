@@ -1,83 +1,52 @@
-# CLAUDE.md
+# Portfolio Website - Technical Guide
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This guide provides technical context for AI assistants when working with this codebase.
 
-## Repository Overview
+## Tech Stack
 
-This is a static portfolio website hosted on GitHub Pages. Built with Vite, using vanilla HTML/CSS/JavaScript with modern build optimization.
+- **Frontend**: Vanilla HTML/CSS/JavaScript
+- **Build Tool**: Vite 5
+- **Deployment**: GitHub Pages with Actions
+- **Form Handler**: Formspree
+- **CSS Processing**: PostCSS with autoprefixer
+- **Code Quality**: ESLint + Prettier
 
-## Common Commands
+## Project Structure
 
-```bash
-# Install dependencies (required first time)
-npm install
-
-# Local development with hot reload
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-
-# Deploy to GitHub Pages (automatic via GitHub Actions)
-git push origin master
-
-# Run linting
-npm run lint
-
-# Format code
-npm run format
+```
+├── index.html          # Main entry point
+├── src/
+│   ├── styles/        # CSS modules
+│   └── scripts/       # JavaScript modules
+├── public/            # Static assets (favicons, images)
+├── .github/workflows/ # Automated deployment
+└── vite.config.js     # Build configuration
 ```
 
-## Architecture
+## Development Commands
 
-**Technology Stack:**
-- Pure HTML/CSS/JavaScript (no frameworks)
-- Vite for build optimization and dev server
-- GitHub Actions for CI/CD deployment
-- Formspree for contact form handling
-- GitHub Pages for hosting
-- CSS custom properties for theming
-- PostCSS for CSS processing
-- ESLint + Prettier for code quality
+```bash
+npm install    # Install dependencies
+npm run dev    # Start dev server (localhost:3000)
+npm run build  # Build for production
+npm run lint   # Check code quality
+npm run format # Auto-format code
+```
 
-**Key Files:**
-- `index.html` - Main portfolio page entry point
-- `src/styles/main.css` - Main styles with imports
-- `src/scripts/main.js` - JavaScript functionality as ES6 module
-- `vite.config.js` - Build configuration
-- `.github/workflows/deploy.yml` - GitHub Actions deployment
-- `public/` - Static assets served directly
+## Deployment
 
-**Content Sections:**
-1. Hero/Header with social links
-2. About section with skills grid
-3. Current role highlight (Zenith AI)
-4. Experience timeline
-5. Projects showcase (commercial & open source)
-6. Contact form with Formspree integration
+Push to `master` branch triggers automatic deployment via GitHub Actions.
 
-## Development Guidelines
+## Key Features
 
-**CSS Architecture:**
-- CSS variables defined in `:root` for colors and spacing
-- Mobile-first responsive design
-- Utility classes for common patterns
+- PWA-enabled with offline support
+- WCAG 2.1 AA compliant
+- CSP headers for security
+- Optimized performance (100/100 Lighthouse)
+- Responsive design
 
-**JavaScript Patterns:**
-- IIFE for form validation to avoid global scope
-- Client-side validation with server-side fallback
-- Anti-bot measures (honeypot, submission timing)
+## Important Notes
 
-**Deployment:**
-- Push to master branch triggers GitHub Actions workflow
-- Automatic build and deployment to GitHub Pages
-- Site available at https://nilukush.github.io
-- No manual build steps required
-
-**Form Configuration:**
-- Formspree endpoint: https://formspree.io/f/xpwreoaq
-- Honeypot field: `_gotcha`
-- Reply-to field: `_replyto`
+- Contact form endpoint: https://formspree.io/f/xpwreoaq
+- PWA configured to exclude subdirectories (for other GitHub Pages projects)
+- Service worker scope limited to root domain
