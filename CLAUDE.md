@@ -28,6 +28,7 @@ npm run preview  # Preview production build
 - Lighthouse: 100/100 Performance, 96/100 Accessibility, 96/100 Best Practices, 100/100 SEO
 - Responsive design
 - Formspree contact form
+- Company metrics and funding information in experience section
 
 ## Deployment
 Push to `master` → GitHub Actions → GitHub Pages

@@ -249,6 +249,13 @@ h1 {
     color: var(--text-secondary);
 }
 
+.company-details {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 3px;
+    font-weight: 400;
+}
+
 .experience-description ul {
     list-style: none;
     margin-top: 10px;
