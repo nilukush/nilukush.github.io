@@ -1,159 +1,191 @@
-/* Skip Navigation Link */
+/* ============================================
+   ACCESSIBILITY ENHANCEMENTS
+   WCAG 2.1 AA Compliance
+   ============================================ */
+
+/* Focus Indicators */
+:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+
+/* Skip Link for Keyboard Navigation */
 .skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--primary-color);
-  color: white;
-  padding: 8px 16px;
-  text-decoration: none;
-  border-radius: 0 0 4px 0;
-  z-index: 100;
-  transition: top 0.2s;
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-primary);
+    color: white;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    z-index: 9999;
+    transition: top var(--transition-fast);
 }
 
 .skip-link:focus {
-  top: 0;
-  outline: 3px solid var(--warning-color);
-  outline-offset: 2px;
+    top: var(--spacing-md);
 }
 
-/* Focus Styles */
-:focus-visible {
-  outline: 3px solid var(--primary-color);
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-
-a:focus-visible {
-  outline: 3px solid var(--primary-color);
-  outline-offset: 2px;
-}
-
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible {
-  outline: 3px solid var(--primary-color);
-  outline-offset: 2px;
-}
-
-/* Remove default focus for mouse users */
-:focus:not(:focus-visible) {
-  outline: none;
+/* Reduce Motion for Users Who Prefer It */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 /* High Contrast Mode Support */
 @media (prefers-contrast: high) {
-  :root {
-    --primary-color: #0033cc;
-    --text-primary: #000000;
-    --text-secondary: #333333;
-    --bg-primary: #ffffff;
-    --bg-secondary: #f0f0f0;
-    --border-color: #000000;
-  }
-  
-  .skill-tag,
-  .tech-tag {
-    border-width: 2px;
-  }
+    :root {
+        --color-primary: #00aa55;
+        --color-primary-dark: #008844;
+    }
+
+    .case-study-card.featured,
+    .download-card,
+    .hero-section {
+        background: var(--color-primary);
+    }
 }
 
-/* Reduced Motion Support */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* Screen Reader Only Text */
+/* Screen Reader Only Content */
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
-/* Ensure Interactive Elements Have Minimum Touch Target Size */
-a,
-button,
-input,
-textarea,
-select {
-  min-height: 44px;
-  min-width: 44px;
+/* Ensure Minimum Touch Target Size (44x44px) */
+@media (pointer: coarse) {
+    .nav-link,
+    .nav-cta,
+    .cta-primary,
+    .cta-secondary,
+    .contact-card,
+    .expand-btn {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
-.social-links a {
-  padding: 12px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+/* Text Contrast Enhancement */
+.company-badge,
+.stage-badge,
+.tech-tag,
+.skill-tag {
+    font-weight: 600;
 }
 
-/* Form Accessibility Improvements */
-.required-indicator {
-  color: var(--warning-color);
-  font-weight: normal;
-  margin-left: 4px;
+/* Link Underlines for Better Cognition */
+@media (hover: none) {
+    a {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 2px;
+    }
 }
 
-.form-instructions {
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-  margin-bottom: 20px;
+/* Form Element Accessibility */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
 }
 
-/* Error Messages for Screen Readers */
-.error-message {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+/* Button State Indicators */
+button:active,
+a:active {
+    transform: scale(0.98);
 }
 
-.error-message::before {
-  content: "⚠️";
-  font-size: 1.2em;
-  flex-shrink: 0;
+/* ARIA Live Regions */
+[aria-live="polite"],
+[aria-live="assertive"] {
+    position: relative;
 }
 
-/* Success Messages for Screen Readers */
-.success-message {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+/* Table Accessibility (for future use) */
+table {
+    border-collapse: collapse;
 }
 
-.success-message::before {
-  content: "✓";
-  font-size: 1.2em;
-  flex-shrink: 0;
-  color: var(--success-color);
+th,
+td {
+    padding: var(--spacing-sm);
+    text-align: left;
+    border: 1px solid var(--color-slate-200);
 }
 
-/* ARIA Live Region Styles */
-.aria-live-region {
-  position: absolute;
-  left: -10000px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+th {
+    background: var(--color-slate-100);
+    font-weight: 600;
 }
 
-/* Improved Color Contrast */
-:root {
-  /* Updated colors for WCAG AA compliance */
-  --text-secondary: #475569; /* Darker than original #64748b */
-  --primary-color: #1d4ed8; /* Darker than original #2563eb */
+caption {
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    text-align: left;
+}
+
+/* Color Blindness Friendly Patterns */
+[data-pattern="striped"] {
+    background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(0, 0, 0, 0.05) 10px,
+        rgba(0, 0, 0, 0.05) 20px
+    );
+}
+
+/* Print Styles */
+@media print {
+    .sticky-nav,
+    .hero-ctas,
+    .download-card,
+    .footer {
+        display: none;
+    }
+
+    body {
+        font-size: 10pt;
+        line-height: 1.4;
+    }
+
+    .section-title {
+        page-break-after: avoid;
+    }
+
+    .case-study-card,
+    .experience-card {
+        page-break-inside: avoid;
+    }
+
+    a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+    }
 }
