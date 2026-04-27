@@ -1,147 +1,196 @@
-// Enhanced form validation and submission module
+/* ============================================
+   STICKY NAVIGATION
+   ============================================ */
 
-// Real-time validation function
-const validateField = (field) => {
-    const value = field.value.trim();
-    let isValid = true;
-    let errorMessage = '';
-    
-    if (field.hasAttribute('required') && !value) {
-        isValid = false;
-        errorMessage = 'This field is required';
-    } else if (field.type === 'email' && value) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(value)) {
-            isValid = false;
-            errorMessage = 'Please enter a valid email address';
-        }
-    } else if (field.maxLength > 0 && value.length > field.maxLength) {
-        isValid = false;
-        errorMessage = `Maximum ${field.maxLength} characters allowed`;
-    }
-    
-    // Update field styling
-    field.style.borderColor = isValid ? 'var(--border-color)' : '#ef4444';
-    
-    // Show/hide error message
-    let errorEl = field.parentElement.querySelector('.error-message');
-    if (!isValid && errorMessage) {
-        if (!errorEl) {
-            errorEl = document.createElement('span');
-            errorEl.className = 'error-message';
-            errorEl.style.cssText = 'color: #ef4444; font-size: 0.875rem; margin-top: 5px; display: block;';
-            field.parentElement.appendChild(errorEl);
-        }
-        errorEl.textContent = errorMessage;
-    } else if (errorEl) {
-        errorEl.remove();
-    }
-    
-    return isValid;
-};
+const stickyNav = document.getElementById('stickyNav');
+const heroSection = document.getElementById('hero');
+let lastScrollY = 0;
 
-// Initialize form validation and submission
-export const initializeContactForm = () => {
-    const form = document.querySelector('.contact-form');
-    if (!form) return;
-    
-    const submitButton = form.querySelector('.submit-button');
-    const formLoadTime = Date.now();
-    
-    // Add validation to all form fields
-    form.querySelectorAll('input[required], textarea[required]').forEach(field => {
-        field.addEventListener('blur', () => validateField(field));
-        field.addEventListener('input', () => {
-            if (field.parentElement.querySelector('.error-message')) {
-                validateField(field);
-            }
-        });
-    });
-    
-    // Form submission handler
-    form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        // Bot protection: Check submission time
-        const submissionTime = Date.now();
-        const timeDiff = (submissionTime - formLoadTime) / 1000;
-        if (timeDiff < 3) {
-            // Silently reject - likely a bot
-            return false;
-        }
-        
-        // Validate all fields
-        const fields = form.querySelectorAll('input[required], textarea[required]');
-        let isFormValid = true;
-        fields.forEach(field => {
-            if (!validateField(field)) {
-                isFormValid = false;
-            }
-        });
-        
-        if (!isFormValid) {
-            return false;
-        }
-        
-        // Show loading state
-        submitButton.disabled = true;
-        submitButton.textContent = 'Sending...';
-        
-        try {
-            const response = await fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form),
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-            
-            if (response.ok) {
-                // Announce success to screen readers
-                announceToScreenReader('Message sent successfully!', 'assertive');
-                
-                // Success feedback
-                form.innerHTML = `
-                    <div style="text-align: center; padding: 40px 20px;" role="status" aria-live="polite">
-                        <div style="font-size: 3rem; margin-bottom: 20px;">✅</div>
-                        <h3 style="color: var(--success-color); margin-bottom: 10px;">Message Sent Successfully!</h3>
-                        <p style="color: var(--text-secondary);">Thank you for reaching out. I'll get back to you within 24 hours.</p>
-                    </div>
-                `;
-            } else {
-                throw new Error('Form submission failed');
-            }
-        } catch (error) {
-            // Error feedback
-            submitButton.disabled = false;
-            submitButton.textContent = 'Send Message';
-            
-            // Show error message
-            let errorAlert = form.querySelector('.form-error');
-            if (!errorAlert) {
-                errorAlert = document.createElement('div');
-                errorAlert.className = 'form-error';
-                errorAlert.style.cssText = 'background: #fee; color: #c00; padding: 12px; border-radius: 6px; margin-bottom: 20px;';
-                form.insertBefore(errorAlert, form.firstChild);
-            }
-            errorAlert.textContent = 'Sorry, there was an error sending your message. Please try again or contact directly via email/phone.';
-            errorAlert.setAttribute('role', 'alert');
-            errorAlert.setAttribute('aria-live', 'assertive');
-            
-            // Announce error to screen readers
-            announceToScreenReader('Error sending message. Please try again.', 'assertive');
-        }
-    });
-};
+// Show/hide sticky nav based on scroll position
+function handleScroll() {
+    const scrollY = window.scrollY;
+    const heroBottom = heroSection.getBoundingClientRect().bottom;
 
-// Auto-initialize when DOM is ready
-if (typeof document !== 'undefined') {
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initializeContactForm);
+    // Show nav when hero is no longer fully visible
+    if (heroBottom < 100) {
+        stickyNav.classList.add('visible');
     } else {
-        initializeContactForm();
+        stickyNav.classList.remove('visible');
+    }
+
+    // Hide nav when scrolling down, show when scrolling up
+    if (scrollY > lastScrollY && scrollY > 200) {
+        stickyNav.classList.remove('visible');
+    } else if (scrollY < lastScrollY) {
+        if (heroSection.getBoundingClientRect().bottom < 100) {
+            stickyNav.classList.add('visible');
+        }
+    }
+
+    lastScrollY = scrollY;
+}
+
+// Throttle scroll events for performance
+let ticking = false;
+function throttleScroll() {
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            handleScroll();
+            ticking = false;
+        });
+        ticking = true;
     }
 }
 
-// Export additional utilities if needed
-export { validateField };
+window.addEventListener('scroll', throttleScroll, { passive: true });
+
+/* ============================================
+   SMOOTH SCROLL FOR NAVIGATION LINKS
+   ============================================ */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+
+        // Skip if it's just "#"
+        if (href === '#') return;
+
+        // Allow download links to work normally
+        if (this.hasAttribute('download')) return;
+
+        const target = document.querySelector(href);
+
+        if (target) {
+            e.preventDefault();
+            const navHeight = stickyNav.offsetHeight;
+            const targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight;
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+
+            // Set focus for accessibility
+            target.setAttribute('tabindex', '-1');
+            target.focus();
+        }
+    });
+});
+
+/* ============================================
+   EXPAND/COLLAPSE EARLIER ROLES
+   ============================================ */
+
+const expandRolesBtn = document.getElementById('expandRolesBtn');
+const earlierRolesList = document.getElementById('earlierRolesList');
+
+if (expandRolesBtn && earlierRolesList) {
+    expandRolesBtn.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+        if (isExpanded) {
+            earlierRolesList.classList.add('hidden');
+            this.textContent = 'View All Roles';
+            this.setAttribute('aria-expanded', 'false');
+        } else {
+            earlierRolesList.classList.remove('hidden');
+            this.textContent = 'Show Less';
+            this.setAttribute('aria-expanded', 'true');
+        }
+    });
+}
+
+/* ============================================
+   INTERSECTION OBSERVER FOR ANIMATIONS
+   ============================================ */
+
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+};
+
+const fadeInOnScroll = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Apply to all cards
+document.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll(
+        '.case-study-card, .experience-card, .metric-card, .contact-card'
+    );
+
+    animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        fadeInOnScroll.observe(el);
+    });
+});
+
+/* ============================================
+   DOWNLOAD TRACKING (Optional Analytics)
+   ============================================ */
+
+const downloadLinks = document.querySelectorAll('a[download]');
+
+downloadLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        // Console log for testing - replace with actual analytics
+        console.log('Resume downloaded from:', window.location.pathname);
+
+        // Example: Google Analytics event
+        // if (typeof gtag !== 'undefined') {
+        //     gtag('event', 'download', {
+        //         'event_category': 'resume',
+        //         'event_label': 'pdf_download'
+        //     });
+        // }
+    });
+});
+
+/* ============================================
+   KEYBOARD NAVIGATION ENHANCEMENTS
+   ============================================ */
+
+// Add keyboard trap for expanded section
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && expandRolesBtn) {
+        const isExpanded = expandRolesBtn.getAttribute('aria-expanded') === 'true';
+        if (isExpanded) {
+            earlierRolesList.classList.add('hidden');
+            expandRolesBtn.textContent = 'View All Roles';
+            expandRolesBtn.setAttribute('aria-expanded', 'false');
+            expandRolesBtn.focus();
+        }
+    }
+});
+
+/* ============================================
+   PREFERS-REDUCED-MOTION DETECTION
+   ============================================ */
+
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+if (prefersReducedMotion.matches) {
+    // Disable intersection observer animations
+    fadeInOnScroll.disconnect();
+
+    // Reset all animated elements
+    document.querySelectorAll(
+        '.case-study-card, .experience-card, .metric-card, .contact-card'
+    ).forEach(el => {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+    });
+}
+
+// Listen for changes in preference
+prefersReducedMotion.addEventListener('change', () => {
+    location.reload();
+});
