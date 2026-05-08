@@ -686,6 +686,17 @@ button {
 
 .contact-icon {
     font-size: var(--font-size-2xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+.contact-icon svg {
+    width: 28px;
+    height: 28px;
 }
 
 .contact-info {
